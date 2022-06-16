@@ -1,10 +1,16 @@
 import Hidden from '@mui/material/Hidden';
 import { styled, ThemeProvider } from '@mui/material/styles';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import { navbarCloseMobile, selectFuseNavbar } from 'app/store/fuse/navbarSlice';
+import {
+  navbarCloseMobile,
+  selectFuseNavbar,
+} from 'app/store/fuse/navbarSlice';
 import { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFuseCurrentLayoutConfig, selectNavbarTheme } from 'app/store/fuse/settingsSlice';
+import {
+  selectFuseCurrentLayoutConfig,
+  selectNavbarTheme,
+} from 'app/store/fuse/settingsSlice';
 import NavbarLayout2 from './NavbarLayout2';
 import NavbarMobileLayout2 from './NavbarMobileLayout2';
 import NavbarToggleFab from '../../shared-components/NavbarToggleFab';
@@ -32,11 +38,11 @@ function NavbarWrapperLayout2(props) {
   return (
     <>
       <ThemeProvider theme={navbarTheme}>
-        <Hidden lgDown>
-          <NavbarLayout2 />
-        </Hidden>
+        {/* <Hidden> */}
+        <NavbarLayout2 />
+        {/* </Hidden> */}
 
-        <Hidden lgUp>
+        {/* <Hidden lgUp>
           <StyledSwipeableDrawer
             anchor="left"
             variant="temporary"
@@ -50,13 +56,13 @@ function NavbarWrapperLayout2(props) {
           >
             <NavbarMobileLayout2 />
           </StyledSwipeableDrawer>
-        </Hidden>
+        </Hidden> */}
       </ThemeProvider>
-      {config.navbar.display && !config.toolbar.display && (
+      {/* {config.navbar.display && !config.toolbar.display && (
         <Hidden lgUp>
           <NavbarToggleFab />
         </Hidden>
-      )}
+      )} */}
     </>
   );
 }
